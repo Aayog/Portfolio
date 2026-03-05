@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #f59e0b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #09090b;
+  color: #e4e4e7;
+  font-family: var(--font-dm-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Selection */
+::selection {
+  background: rgba(245, 158, 11, 0.2);
+  color: #ffffff;
+}
+
+/* Dot grid background utility */
+.bg-dot-pattern {
+  background-image: radial-gradient(circle, rgba(113, 113, 122, 0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Accent glow blur behind elements */
+.accent-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+/* Tech tag style */
+.tech-tag {
+  @apply font-mono text-xs px-2.5 py-1 rounded border border-zinc-700 text-zinc-400 bg-zinc-800/50 hover:border-amber-500/30 hover:text-amber-400/80 transition-colors duration-200;
+}
+
+/* Section container */
+.section-container {
+  @apply max-w-[1200px] mx-auto px-6 lg:px-8;
+}
+
+/* Accent line decoration */
+.accent-line {
+  @apply inline-block w-12 h-0.5 bg-amber-500 mb-6;
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid rgba(245, 158, 11, 0.6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
